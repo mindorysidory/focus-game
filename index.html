@@ -6,91 +6,15 @@
     <title>Focus Game - Train Your Brain!</title>
     <meta name="description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods. Free online brain training game.">
     <meta name="keywords" content="focus training, memory game, brain training, concentration game, cognitive enhancement, free brain games, memory improvement">
-    <meta name="author" content="Focus Game">
-    <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://focus-game-five.vercel.app/">
-    <meta property="og:title" content="Focus Game - Train Your Brain!">
-    <meta property="og:description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
-    <meta property="og:image" content="https://focus-game-five.vercel.app/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://focus-game-five.vercel.app/">
-    <meta property="twitter:title" content="Focus Game - Train Your Brain!">
-    <meta property="twitter:description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
-    <meta property="twitter:image" content="https://focus-game-five.vercel.app/og-image.jpg">
-
-    <!-- Google Analytics 4 (GA4) - 2025 Enhanced Version -->
+    <!-- Google Analytics 4 (GA4) - Simple Version -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPFC5CNQGE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
-        // Enhanced GA4 Configuration with 2025 best practices
-        gtag('config', 'G-WPFC5CNQGE', {
-            // Enhanced measurement features
-            enhanced_measurement: {
-                scroll: true,
-                outbound_clicks: true,
-                site_search: true,
-                video_engagement: true,
-                file_downloads: true
-            },
-            // Privacy and consent settings
-            anonymize_ip: true,
-            allow_google_signals: true,
-            allow_ad_personalization_signals: true,
-            // Performance settings
-            transport_type: 'beacon',
-            // User engagement settings
-            engagement_time_msec: 100,
-            // Custom parameters
-            custom_map: {
-                'custom_parameter_1': 'game_level',
-                'custom_parameter_2': 'user_score'
-            }
-        });
-        
-        // Enhanced ecommerce and game-specific tracking
-        gtag('event', 'page_view', {
-            page_title: document.title,
-            page_location: window.location.href,
-            content_group1: 'Brain Training Game',
-            content_group2: 'Focus Game'
-        });
+        gtag('config', 'G-WPFC5CNQGE');
     </script>
-
-    <!-- Consent Mode V2 (2025 requirement for EU) -->
-    <script>
-        // Default consent state
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'granted',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'functionality_storage': 'granted',
-            'personalization_storage': 'granted',
-            'security_storage': 'granted'
-        });
-        
-        // Update consent based on user choice (you can customize this)
-        function updateConsent(consentGranted) {
-            gtag('consent', 'update', {
-                'ad_storage': consentGranted ? 'granted' : 'denied',
-                'analytics_storage': 'granted',
-                'ad_user_data': consentGranted ? 'granted' : 'denied',
-                'ad_personalization': consentGranted ? 'granted' : 'denied'
-            });
-        }
-    </script>
-
-    <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-            crossorigin="anonymous"></script>
 
     <style>
         body {
@@ -411,7 +335,6 @@
             line-height: 1.5;
         }
 
-        /* AdSense Ad Spots */
         .ad-banner {
             background: #f8f9fa;
             border: 2px solid #e9ecef;
@@ -425,17 +348,6 @@
             justify-content: center;
         }
 
-        .ad-leaderboard {
-            min-height: 90px;
-        }
-
-        .ad-rectangle {
-            min-height: 250px;
-            max-width: 300px;
-            margin: 20px auto;
-        }
-
-        /* Footer with links */
         .footer {
             background: #333;
             color: white;
@@ -504,19 +416,10 @@
                 <a href="#features">How it Works</a>
                 <a href="#about">About</a>
                 <a href="privacy.html">Privacy</a>
-                <a href="contact.html">Contact</a>
+                <a href="feedback.html">💬 Feedback</a>
             </div>
         </nav>
     </header>
-
-    <!-- Top Banner Ad -->
-    <div class="ad-banner ad-leaderboard">
-        <!-- AdSense Leaderboard 728x90 -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"></ins>
-    </div>
 
     <section class="main-banner">
         <div class="banner-content">
@@ -592,21 +495,11 @@
             </div>
         </div>
 
-        <!-- Side Rectangle Ad -->
-        <div class="ad-banner ad-rectangle">
-            <!-- AdSense Medium Rectangle 300x250 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:250px"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"></ins>
-        </div>
-
-        <!-- Affiliate Marketing Section -->
         <div class="ad-banner">
             <div>
                 <h3 style="color: #2c5aa0; margin-bottom: 10px;">📚 Boost Your Brain Power</h3>
                 <p style="margin-bottom: 15px;">Discover scientifically proven methods to enhance your focus and memory</p>
-                <a href="https://amazon.com/dp/XXXXXXXXX?tag=focusgame-20" 
+                <a href="#" 
                    style="background: #ff9900; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;"
                    target="_blank" rel="noopener">
                    View Top Brain Training Books →
@@ -687,12 +580,6 @@
         </div>
     </footer>
 
-    <!-- AdSense Auto Ads -->
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
     <script>
         class MemoryGame {
             constructor() {
@@ -709,62 +596,25 @@
                 this.loadData();
                 this.updateUI();
                 this.setupEvents();
-                this.trackAnalytics();
-            }
-
-            trackAnalytics() {
-                // Enhanced GA4 event tracking
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'page_view', {
-                        page_title: 'Focus Game',
-                        page_location: window.location.href,
-                        content_group1: 'Brain Training',
-                        content_group2: 'Memory Game'
-                    });
-                }
             }
 
             setupEvents() {
                 document.getElementById('startBtn').addEventListener('click', () => {
                     this.startGame();
-                    // Enhanced game start tracking
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'game_start', {
-                            event_category: 'game_engagement',
-                            event_label: 'focus_training_game',
-                            game_type: 'memory_sequence',
-                            difficulty_level: 'progressive',
-                            user_level: this.level
+                            event_category: 'engagement',
+                            event_label: 'memory_game'
                         });
                     }
                 });
                 
-                document.getElementById('resetBtn').addEventListener('click', () => {
-                    this.resetData();
-                    // Track reset action
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'game_reset', {
-                            event_category: 'game_action',
-                            event_label: 'progress_reset',
-                            previous_score: this.score,
-                            previous_level: this.bestLevel
-                        });
-                    }
-                });
+                document.getElementById('resetBtn').addEventListener('click', () => this.resetData());
                 
                 document.querySelectorAll('.color-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         if (this.isUserTurn) {
                             this.handleClick(e.target.dataset.color);
-                            // Track button clicks
-                            if (typeof gtag !== 'undefined') {
-                                gtag('event', 'game_interaction', {
-                                    event_category: 'game_play',
-                                    event_label: `color_${e.target.dataset.color}`,
-                                    current_level: this.level,
-                                    sequence_position: this.userInput.length
-                                });
-                            }
                         }
                     });
                 });
@@ -779,27 +629,153 @@
                 
                 this.updateButtonLayout();
                 document.getElementById('gameButtons').classList.remove('hidden');
+                document.getElementById('startBtn').textContent = 'Playing...';
+                document.getElementById('startBtn').disabled = true;
+                
+                this.nextRound();
+            }
+
+            updateButtonLayout() {
+                const buttonsContainer = document.getElementById('gameButtons');
+                const allButtons = document.querySelectorAll('.color-btn');
+                
+                allButtons.forEach(btn => btn.classList.add('hidden'));
+                
+                let activeColors;
+                if (this.level <= 5) {
+                    activeColors = this.colors.slice(0, 4);
+                    buttonsContainer.className = 'color-buttons buttons-4';
+                } else if (this.level <= 10) {
+                    activeColors = this.colors.slice(0, 6);
+                    buttonsContainer.className = 'color-buttons buttons-6';
+                } else {
+                    activeColors = this.colors.slice(0, 8);
+                    buttonsContainer.className = 'color-buttons buttons-8';
+                }
+                
+                activeColors.forEach(color => {
+                    const button = document.querySelector(`[data-color="${color}"]`);
+                    if (button) {
+                        button.classList.remove('hidden');
+                    }
+                });
+            }
+
+            nextRound() {
+                this.userInput = [];
+                this.addToSequence();
+                this.showSequence();
+            }
+
+            addToSequence() {
+                let availableColors;
+                if (this.level <= 5) {
+                    availableColors = this.colors.slice(0, 4);
+                } else if (this.level <= 10) {
+                    availableColors = this.colors.slice(0, 6);
+                } else {
+                    availableColors = this.colors.slice(0, 8);
+                }
+                
+                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+                this.sequence.push(randomColor);
+            }
+
+            async showSequence() {
+                this.isUserTurn = false;
+                const colorCount = this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8;
+                document.getElementById('gameStatus').textContent = `Level ${this.level} - Watch the pattern! (${colorCount} colors available)`;
+                
+                await this.wait(1000);
+                
+                for (let i = 0; i < this.sequence.length; i++) {
+                    await this.flashButton(this.sequence[i]);
+                    await this.wait(500);
+                }
+                
+                this.isUserTurn = true;
+                document.getElementById('gameStatus').textContent = 'Now repeat the sequence by clicking the buttons!';
+            }
+
+            async flashButton(color) {
+                const button = document.querySelector(`[data-color="${color}"]`);
+                if (!button) return;
+                
+                const originalStyle = button.style.transform;
+                
+                button.style.transform = 'scale(1.1) translateY(-5px)';
+                button.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
+                
+                await this.wait(350);
+                
+                button.style.transform = originalStyle;
+                button.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            }
+
+            handleClick(color) {
+                this.userInput.push(color);
+                this.flashButton(color);
+                
+                const currentIndex = this.userInput.length - 1;
+                
+                if (this.userInput[currentIndex] !== this.sequence[currentIndex]) {
+                    this.gameOver('Wrong sequence! Game Over');
+                    return;
+                }
+                
+                if (this.userInput.length === this.sequence.length) {
+                    this.roundComplete();
+                }
+            }
+
+            roundComplete() {
+                const basePoints = this.level * 12;
+                const streakBonus = this.streak * 8;
+                const colorBonus = this.level > 10 ? 20 : this.level > 5 ? 10 : 0;
+                const totalPoints = basePoints + streakBonus + colorBonus;
+                
+                this.score += totalPoints;
+                this.streak++;
+                this.level++;
+                this.bestLevel = Math.max(this.bestLevel, this.level);
+                
+                document.getElementById('gameStatus').textContent = `Great! +${totalPoints} points`;
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'level_up', {
+                        event_category: 'game_progress',
+                        event_label: `level_${this.level}`,
+                        value: this.level
+                    });
+                }
+                
+                this.updateUI();
+                this.saveData();
+                
+                setTimeout(() => {
+                    if (this.level <= 15) {
+                        this.updateButtonLayout();
+                        this.nextRound();
+                    } else {
+                        this.gameComplete();
+                    }
+                }, 1200);
+            }
+
+            gameOver(message) {
+                this.isPlaying = false;
+                this.isUserTurn = false;
+                this.streak = 0;
+                
+                document.getElementById('gameStatus').textContent = message + ` Final Level: ${this.level}`;
                 document.getElementById('startBtn').textContent = 'Try Again';
                 document.getElementById('startBtn').disabled = false;
                 
-                // Enhanced game over tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'game_over', {
-                        event_category: 'game_completion',
+                        event_category: 'game_progress',
                         event_label: `final_level_${this.level}`,
-                        value: this.level,
-                        final_score: this.score,
-                        highest_streak: this.streak,
-                        colors_reached: this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8,
-                        session_duration: Date.now() - this.gameStartTime,
-                        rank_achieved: this.getRank().name
-                    });
-                    
-                    // Track user retention metrics
-                    gtag('event', 'user_engagement', {
-                        event_category: 'retention',
-                        event_label: 'game_session_end',
-                        engagement_time_msec: Date.now() - this.gameStartTime
+                        value: this.level
                     });
                 }
                 
@@ -813,24 +789,11 @@
                 document.getElementById('startBtn').disabled = false;
                 this.isPlaying = false;
                 
-                // Enhanced game completion tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'game_complete', {
                         event_category: 'achievement',
                         event_label: 'all_levels_completed',
-                        value: 15,
-                        final_score: this.score,
-                        total_session_time: Date.now() - this.gameStartTime,
-                        mastery_achieved: true,
-                        completion_rate: '100%'
-                    });
-                    
-                    // Track master achievement
-                    gtag('event', 'achievement_unlocked', {
-                        event_category: 'game_achievement',
-                        event_label: 'game_master',
-                        achievement_id: 'complete_all_levels',
-                        achievement_name: 'Focus Master'
+                        value: 15
                     });
                 }
             }
@@ -887,10 +850,12 @@
             }
         }
 
+        // Initialize game when page loads
         document.addEventListener('DOMContentLoaded', () => {
             new MemoryGame();
         });
 
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -902,170 +867,4 @@
         });
     </script>
 </body>
-</html> 'Playing...';
-                document.getElementById('startBtn').disabled = true;
-                
-                this.nextRound();
-            }
-
-            updateButtonLayout() {
-                const buttonsContainer = document.getElementById('gameButtons');
-                const allButtons = document.querySelectorAll('.color-btn');
-                
-                allButtons.forEach(btn => btn.classList.add('hidden'));
-                
-                let activeColors;
-                if (this.level <= 5) {
-                    activeColors = this.colors.slice(0, 4);
-                    buttonsContainer.className = 'color-buttons buttons-4';
-                } else if (this.level <= 10) {
-                    activeColors = this.colors.slice(0, 6);
-                    buttonsContainer.className = 'color-buttons buttons-6';
-                } else {
-                    activeColors = this.colors.slice(0, 8);
-                    buttonsContainer.className = 'color-buttons buttons-8';
-                }
-                
-                activeColors.forEach(color => {
-                    document.querySelector(`[data-color="${color}"]`).classList.remove('hidden');
-                });
-            }
-
-            nextRound() {
-                this.userInput = [];
-                this.addToSequence();
-                this.showSequence();
-            }
-
-            addToSequence() {
-                let availableColors;
-                if (this.level <= 5) {
-                    availableColors = this.colors.slice(0, 4);
-                } else if (this.level <= 10) {
-                    availableColors = this.colors.slice(0, 6);
-                } else {
-                    availableColors = this.colors.slice(0, 8);
-                }
-                
-                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
-                this.sequence.push(randomColor);
-            }
-
-            async showSequence() {
-                this.isUserTurn = false;
-                const colorCount = this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8;
-                document.getElementById('gameStatus').textContent = `Level ${this.level} - Watch the pattern! (${colorCount} colors available)`;
-                
-                await this.wait(1000);
-                
-                for (let i = 0; i < this.sequence.length; i++) {
-                    await this.flashButton(this.sequence[i]);
-                    await this.wait(500);
-                }
-                
-                this.isUserTurn = true;
-                document.getElementById('gameStatus').textContent = 'Now repeat the sequence by clicking the buttons!';
-            }
-
-            async flashButton(color) {
-                const button = document.querySelector(`[data-color="${color}"]`);
-                const originalStyle = button.style.transform;
-                
-                button.style.transform = 'scale(1.1) translateY(-5px)';
-                button.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
-                
-                await this.wait(350);
-                
-                button.style.transform = originalStyle;
-                button.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-            }
-
-            handleClick(color) {
-                this.userInput.push(color);
-                this.flashButton(color);
-                
-                const currentIndex = this.userInput.length - 1;
-                
-                if (this.userInput[currentIndex] !== this.sequence[currentIndex]) {
-                    this.gameOver('Wrong sequence! Game Over');
-                    return;
-                }
-                
-                if (this.userInput.length === this.sequence.length) {
-                    this.roundComplete();
-                }
-            }
-
-            roundComplete() {
-                const basePoints = this.level * 12;
-                const streakBonus = this.streak * 8;
-                const colorBonus = this.level > 10 ? 20 : this.level > 5 ? 10 : 0;
-                const totalPoints = basePoints + streakBonus + colorBonus;
-                
-                this.score += totalPoints;
-                this.streak++;
-                this.level++;
-                this.bestLevel = Math.max(this.bestLevel, this.level);
-                
-                document.getElementById('gameStatus').textContent = `Great! +${totalPoints} points`;
-                
-                // Enhanced level completion tracking
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'level_up', {
-                        event_category: 'game_progress',
-                        event_label: `level_${this.level}`,
-                        character_name: 'focus_trainer',
-                        level_name: `Level ${this.level}`,
-                        value: this.level,
-                        score: this.score,
-                        streak: this.streak,
-                        colors_available: this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8,
-                        sequence_length: this.sequence.length,
-                        points_earned: totalPoints
-                    });
-                    
-                    // Track milestone achievements
-                    if (this.level === 5) {
-                        gtag('event', 'achievement_unlocked', {
-                            event_category: 'game_achievement',
-                            event_label: 'six_colors_unlocked',
-                            achievement_id: 'color_expansion_1'
-                        });
-                    } else if (this.level === 10) {
-                        gtag('event', 'achievement_unlocked', {
-                            event_category: 'game_achievement',
-                            event_label: 'eight_colors_unlocked',
-                            achievement_id: 'color_expansion_2'
-                        });
-                    }
-                    
-                    // Track rank progression
-                    const newRank = this.getRank();
-                    gtag('event', 'rank_progression', {
-                        event_category: 'user_progression',
-                        event_label: newRank.name.toLowerCase(),
-                        rank_name: newRank.name,
-                        rank_icon: newRank.icon
-                    });
-                }
-                
-                this.updateUI();
-                this.saveData();
-                
-                setTimeout(() => {
-                    if (this.level <= 15) {
-                        this.updateButtonLayout();
-                        this.nextRound();
-                    } else {
-                        this.gameComplete();
-                    }
-                }, 1200);
-            }
-
-            gameOver(message) {
-                this.isPlaying = false;
-                this.isUserTurn = false;
-                this.streak = 0;
-                
-                document.getElementById('gameStatus').textContent = message + ` Final Level: ${this.level}`;
-                document.getElementById('startBtn').textContent =
+</html>
