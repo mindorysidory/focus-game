@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Focus Game</title>
+    <meta name="robots" content="index, follow">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c5aa0; border-bottom: 2px solid #2c5aa0; padding-bottom: 10px; }
+        h2 { color: #4a90e2; margin-top: 30px; }
+        .back-link { background: #4a90e2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
+        .back-link:hover { background: #357abd; }
+        .contact-method { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4a90e2; }
+        .contact-form { margin-top: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .submit-btn { background: #4a90e2; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        .submit-btn:hover { background: #357abd; }
+        .faq-section { margin-top: 30px; }
+        .faq-item { margin-bottom: 15px; }
+        .faq-question { font-weight: bold; color: #2c5aa0; margin-bottom: 5px; }
+        .faq-answer { color: #666; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { background: #4a90e2; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; }
+        .social-links a:hover { background: #357abd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Game</a>
+        
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Whether you have questions, feedback, or need support, we're here to help.</p>
+
+        <h2>📧 Get in Touch</h2>
+        
+        <div class="contact-method">
+            <h3>🎮 Game Support</h3>
+            <p><strong>Email:</strong> support@focusgame.com</p>
+            <p>For technical issues, game bugs, or gameplay questions.</p>
+            <p><strong>Response time:</strong> Usually within 24 hours</p>
+        </div>
+
+        <div class="contact-method">
+            <h3>💼 Business Inquiries</h3>
+            <p><strong>Email:</strong> business@focusgame.com</p>
+            <p>For partnerships, advertising, or business opportunities.</p>
+        </div>
+
+        <div class="contact-method">
+            <h3>🛡️ Privacy & Legal</h3>
+            <p><strong>Email:</strong> privacy@focusgame.com</p>
+            <p>For privacy concerns, data requests, or legal matters.</p>
+        </div>
+
+        <h2>📝 Send us a Message</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a topic...</option>
+                        <option value="game_support">Game Support</option>
+                        <option value="bug_report">Bug Report</option>
+                        <option value="feature_request">Feature Request</option>
+                        <option value="feedback">General Feedback</option>
+                        <option value="business">Business Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I reset my game progress?</div>
+                <div class="faq-answer">A: Click the "Reset Stats" button in the game, or clear your browser's local storage for our site.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Why can't I see ads on the website?</div>
+                <div class="faq-answer">A: Make sure your ad blocker is disabled. Ads help us keep the game free for everyone!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Is my game data saved automatically?</div>
+                <div class="faq-answer">A: Yes, your progress is automatically saved in your browser. It won't be lost unless you clear browser data.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I play this game offline?</div>
+                <div class="faq-answer">A: No, you need an internet connection to access the game and for ads to display properly.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Is Focus Game suitable for children?</div>
+                <div class="faq-answer">A: Yes! The game is family-friendly and great for developing concentration skills in children and adults.</div>
+            </div>
+        </div>
+
+        <h2>🌐 Follow Us</h2>
+        <p>Stay updated with new features and brain training tips:</p>
+        <div class="social-links">
+            <a href="#" target="_blank">📧 Newsletter</a>
+            <a href="#" target="_blank">📝 Blog</a>
+            <a href="#" target="_blank">💬 Community</a>
+        </div>
+
+        <h2>⏰ Support Hours</h2>
+        <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM (PST)<br>
+        <strong>Weekend:</strong> Limited support available</p>
+        
+        <p><em>We typically respond to all inquiries within 24 hours during business days.</em></p>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            
+            // Reset form
+            this.reset();
+            
+            // Track form submission
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    event_category: 'engagement',
+                    event_label: 'contact_form',
+                    value: 1
+                });
+            }
+        });
+    </script>
+</body>
+</html>
