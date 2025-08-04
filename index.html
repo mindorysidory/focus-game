@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Game - Train Your Brain!</title>
+    <meta name="description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
+    <meta name="keywords" content="focus training, memory game, brain training, concentration game, cognitive enhancement">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background: #fff;
+            padding: 15px 0;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: #2c5aa0;
+        }
+
+        .main-banner {
+            background: linear-gradient(45deg, #4a90e2, #7b68ee);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .banner-content h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content-area {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .game-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .game-desc {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .rank-display {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .rank-bronze { background: #cd7f32; color: white; }
+        .rank-silver { background: #c0c0c0; color: white; }
+        .rank-gold { background: #ffd700; color: #333; }
+        .rank-platinum { background: #e5e4e2; color: #333; }
+        .rank-diamond { background: #b9f2ff; color: #333; }
+
+        .game-area {
+            background: #fafafa;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-status {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .difficulty-info {
+            background: #e8f4fd;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #2c5aa0;
+            border-left: 4px solid #4a90e2;
+        }
+
+        .color-buttons {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .buttons-4 { grid-template-columns: repeat(2, 1fr); max-width: 200px; }
+        .buttons-6 { grid-template-columns: repeat(3, 1fr); max-width: 300px; }
+        .buttons-8 { grid-template-columns: repeat(4, 1fr); max-width: 400px; }
+
+        .color-btn {
+            width: 85px;
+            height: 85px;
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.2s;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .color-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-red { background: #dc3545; }
+        .btn-blue { background: #007bff; }
+        .btn-green { background: #28a745; }
+        .btn-yellow { background: #ffc107; color: #333; }
+        .btn-purple { background: #6f42c1; }
+        .btn-orange { background: #fd7e14; }
+        .btn-pink { background: #e83e8c; }
+        .btn-brown { background: #8b4513; }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-start {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .btn-start:hover {
+            background: #357abd;
+        }
+
+        .btn-start:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background: #545b62;
+        }
+
+        .features-section {
+            background: white;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .ad-section {
+            background: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .ad-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .banner-content h1 { font-size: 28px; }
+            .stats-row { flex-direction: column; gap: 20px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-menu { display: none; }
+            .color-btn { width: 70px; height: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">🧠 FocusGame</a>
+            <div class="nav-menu">
+                <a href="#game">Play Game</a>
+                <a href="#features">How it Works</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main-banner">
+        <div class="banner-content">
+            <h1>Train Your Brain, Boost Your Focus!</h1>
+            <p>Challenge yourself with our memory sequence game. Start with 4 colors, unlock more as you level up!</p>
+            <div class="stats-row">
+                <div class="stat-box">
+                    <span class="stat-number">12,435</span>
+                    <span class="stat-text">Players</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">1.8M</span>
+                    <span class="stat-text">Games Played</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">84%</span>
+                    <span class="stat-text">Improved Focus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-area">
+        <h2 class="game-title">Memory Sequence Challenge</h2>
+        <p class="game-desc">Watch the pattern, remember the sequence, click in order. More colors unlock as you progress!</p>
+        
+        <div class="game-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="score">0</span>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="level">1</span>
+                    <div class="stat-label">Level</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="streak">0</span>
+                    <div class="stat-label">Streak</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="best">1</span>
+                    <div class="stat-label">Best Level</div>
+                </div>
+            </div>
+
+            <div class="rank-display">
+                <div class="rank-badge rank-bronze" id="rankBadge">🥉 Bronze Rank</div>
+            </div>
+
+            <div class="game-area">
+                <div class="game-status" id="gameStatus">Ready to start? Click the button below!</div>
+                
+                <div class="difficulty-info" id="difficultyInfo">
+                    Level 1-5: 4 colors | Level 6-10: 6 colors | Level 11-15: 8 colors
+                </div>
+                
+                <div class="color-buttons buttons-4 hidden" id="gameButtons">
+                    <button class="color-btn btn-red" data-color="red">RED</button>
+                    <button class="color-btn btn-blue" data-color="blue">BLUE</button>
+                    <button class="color-btn btn-green" data-color="green">GREEN</button>
+                    <button class="color-btn btn-yellow" data-color="yellow">YELLOW</button>
+                    <button class="color-btn btn-purple hidden" data-color="purple">PURPLE</button>
+                    <button class="color-btn btn-orange hidden" data-color="orange">ORANGE</button>
+                    <button class="color-btn btn-pink hidden" data-color="pink">PINK</button>
+                    <button class="color-btn btn-brown hidden" data-color="brown">BROWN</button>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-start" id="startBtn">Start Game</button>
+                <button class="btn btn-reset" id="resetBtn">Reset Stats</button>
+            </div>
+        </div>
+
+        <div class="ad-section">
+            <h3 class="ad-title">📚 Recommended: Focus & Memory Books</h3>
+            <p>Discover proven techniques to enhance your concentration and cognitive abilities</p>
+        </div>
+    </div>
+
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <h2 class="features-title">Why Train Your Focus?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Better Concentration</h3>
+                    <p class="feature-text">Improve your ability to focus on tasks for longer periods without getting distracted.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Enhanced Memory</h3>
+                    <p class="feature-text">Strengthen your short-term and working memory through regular practice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Faster Processing</h3>
+                    <p class="feature-text">Speed up your mental processing and decision-making abilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😌</div>
+                    <h3 class="feature-title">Reduce Stress</h3>
+                    <p class="feature-text">Better focus leads to increased productivity and reduced mental fatigue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 FocusGame. Train your brain, one sequence at a time.</p>
+    </footer>
+
+    <script>
+        class MemoryGame {
+            constructor() {
+                this.sequence = [];
+                this.userInput = [];
+                this.level = 1;
+                this.score = 0;
+                this.streak = 0;
+                this.bestLevel = 1;
+                this.isPlaying = false;
+                this.isUserTurn = false;
+                this.colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown'];
+                
+                this.loadData();
+                this.updateUI();
+                this.setupEvents();
+            }
+
+            setupEvents() {
+                document.getElementById('startBtn').addEventListener('click', () => this.startGame());
+                document.getElementById('resetBtn').addEventListener('click', () => this.resetData());
+                
+                document.querySelectorAll('.color-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        if (this.isUserTurn) {
+                            this.handleClick(e.target.dataset.color);
+                        }
+                    });
+                });
+            }
+
+            startGame() {
+                this.sequence = [];
+                this.userInput = [];
+                this.level = 1;
+                this.streak = 0;
+                this.isPlaying = true;
+                
+                this.updateButtonLayout();
+                document.getElementById('gameButtons').classList.remove('hidden');
+                document.getElementById('startBtn').textContent = 'Playing...';
+                document.getElementById('startBtn').disabled = true;
+                
+                this.nextRound();
+            }
+
+            updateButtonLayout() {
+                const buttonsContainer = document.getElementById('gameButtons');
+                const allButtons = document.querySelectorAll('.color-btn');
+                
+                allButtons.forEach(btn => btn.classList.add('hidden'));
+                
+                let activeColors;
+                if (this.level <= 5) {
+                    activeColors = this.colors.slice(0, 4);
+                    buttonsContainer.className = 'color-buttons buttons-4';
+                } else if (this.level <= 10) {
+                    activeColors = this.colors.slice(0, 6);
+                    buttonsContainer.className = 'color-buttons buttons-6';
+                } else {
+                    activeColors = this.colors.slice(0, 8);
+                    buttonsContainer.className = 'color-buttons buttons-8';
+                }
+                
+                activeColors.forEach(color => {
+                    document.querySelector(`[data-color="${color}"]`).classList.remove('hidden');
+                });
+            }
+
+            nextRound() {
+                this.userInput = [];
+                this.addToSequence();
+                this.showSequence();
+            }
+
+            addToSequence() {
+                let availableColors;
+                if (this.level <= 5) {
+                    availableColors = this.colors.slice(0, 4);
+                } else if (this.level <= 10) {
+                    availableColors = this.colors.slice(0, 6);
+                } else {
+                    availableColors = this.colors.slice(0, 8);
+                }
+                
+                const randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+                this.sequence.push(randomColor);
+            }
+
+            async showSequence() {
+                this.isUserTurn = false;
+                const colorCount = this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8;
+                document.getElementById('gameStatus').textContent = `Level ${this.level} - Watch the pattern! (${colorCount} colors available)`;
+                
+                await this.wait(1000);
+                
+                for (let i = 0; i < this.sequence.length; i++) {
+                    await this.flashButton(this.sequence[i]);
+                    await this.wait(500);
+                }
+                
+                this.isUserTurn = true;
+                document.getElementById('gameStatus').textContent = 'Now repeat the sequence by clicking the buttons!';
+            }
+
+            async flashButton(color) {
+                const button = document.querySelector(`[data-color="${color}"]`);
+                const originalStyle = button.style.transform;
+                
+                button.style.transform = 'scale(1.1) translateY(-5px)';
+                button.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
+                
+                await this.wait(350);
+                
+                button.style.transform = originalStyle;
+                button.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            }
+
+            handleClick(color) {
+                this.userInput.push(color);
+                this.flashButton(color);
+                
+                const currentIndex = this.userInput.length - 1;
+                
+                if (this.userInput[currentIndex] !== this.sequence[currentIndex]) {
+                    this.gameOver('Wrong sequence! Game Over');
+                    return;
+                }
+                
+                if (this.userInput.length === this.sequence.length) {
+                    this.roundComplete();
+                }
+            }
+
+            roundComplete() {
+                const basePoints = this.level * 12;
+                const streakBonus = this.streak * 8;
+                const colorBonus = this.level > 10 ? 20 : this.level > 5 ? 10 : 0;
+                const totalPoints = basePoints + streakBonus + colorBonus;
+                
+                this.score += totalPoints;
+                this.streak++;
+                this.level++;
+                this.bestLevel = Math.max(this.bestLevel, this.level);
+                
+                document.getElementById('gameStatus').textContent = `Great! +${totalPoints} points`;
+                
+                this.updateUI();
+                this.saveData();
+                
+                setTimeout(() => {
+                    if (this.level <= 15) {
+                        this.updateButtonLayout();
+                        this.nextRound();
+                    } else {
+                        this.gameComplete();
+                    }
+                }, 1200);
+            }
+
+            gameOver(message) {
+                this.isPlaying = false;
+                this.isUserTurn = false;
+                this.streak = 0;
+                
+                document.getElementById('gameStatus').textContent = message + ` Final Level: ${this.level}`;
+                document.getElementById('startBtn').textContent = 'Try Again';
+                document.getElementById('startBtn').disabled = false;
+                
+                this.updateUI();
+                this.saveData();
+            }
+
+            gameComplete() {
+                document.getElementById('gameStatus').textContent = '🎉 Congratulations! You completed all levels!';
+                document.getElementById('startBtn').textContent = 'Play Again';
+                document.getElementById('startBtn').disabled = false;
+                this.isPlaying = false;
+            }
+
+            updateUI() {
+                document.getElementById('score').textContent = this.score.toLocaleString();
+                document.getElementById('level').textContent = this.level;
+                document.getElementById('streak').textContent = this.streak;
+                document.getElementById('best').textContent = this.bestLevel;
+                
+                this.updateRank();
+            }
+
+            updateRank() {
+                const rankEl = document.getElementById('rankBadge');
+                let rank = this.getRank();
+                
+                rankEl.textContent = `${rank.icon} ${rank.name} Rank`;
+                rankEl.className = `rank-badge ${rank.class}`;
+            }
+
+            getRank() {
+                if (this.score < 200) return { name: 'Bronze', class: 'rank-bronze', icon: '🥉' };
+                if (this.score < 500) return { name: 'Silver', class: 'rank-silver', icon: '🥈' };
+                if (this.score < 1000) return { name: 'Gold', class: 'rank-gold', icon: '🥇' };
+                if (this.score < 2000) return { name: 'Platinum', class: 'rank-platinum', icon: '💎' };
+                return { name: 'Diamond', class: 'rank-diamond', icon: '💠' };
+            }
+
+            saveData() {
+                localStorage.setItem('memoryGame_score', this.score);
+                localStorage.setItem('memoryGame_bestLevel', this.bestLevel);
+            }
+
+            loadData() {
+                this.score = parseInt(localStorage.getItem('memoryGame_score') || '0');
+                this.bestLevel = parseInt(localStorage.getItem('memoryGame_bestLevel') || '1');
+            }
+
+            resetData() {
+                if (confirm('Are you sure you want to reset all your progress?')) {
+                    localStorage.removeItem('memoryGame_score');
+                    localStorage.removeItem('memoryGame_bestLevel');
+                    this.score = 0;
+                    this.bestLevel = 1;
+                    this.level = 1;
+                    this.streak = 0;
+                    this.updateUI();
+                }
+            }
+
+            wait(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new MemoryGame();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
