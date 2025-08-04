@@ -23,13 +23,69 @@
     <meta property="twitter:description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
     <meta property="twitter:image" content="https://focus-game-five.vercel.app/og-image.jpg">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Google Analytics 4 (GA4) - 2025 Enhanced Version -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPFC5CNQGE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Enhanced GA4 Configuration with 2025 best practices
+        gtag('config', 'G-WPFC5CNQGE', {
+            // Enhanced measurement features
+            enhanced_measurement: {
+                scroll: true,
+                outbound_clicks: true,
+                site_search: true,
+                video_engagement: true,
+                file_downloads: true
+            },
+            // Privacy and consent settings
+            anonymize_ip: true,
+            allow_google_signals: true,
+            allow_ad_personalization_signals: true,
+            // Performance settings
+            transport_type: 'beacon',
+            // User engagement settings
+            engagement_time_msec: 100,
+            // Custom parameters
+            custom_map: {
+                'custom_parameter_1': 'game_level',
+                'custom_parameter_2': 'user_score'
+            }
+        });
+        
+        // Enhanced ecommerce and game-specific tracking
+        gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: window.location.href,
+            content_group1: 'Brain Training Game',
+            content_group2: 'Focus Game'
+        });
+    </script>
+
+    <!-- Consent Mode V2 (2025 requirement for EU) -->
+    <script>
+        // Default consent state
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'functionality_storage': 'granted',
+            'personalization_storage': 'granted',
+            'security_storage': 'granted'
+        });
+        
+        // Update consent based on user choice (you can customize this)
+        function updateConsent(consentGranted) {
+            gtag('consent', 'update', {
+                'ad_storage': consentGranted ? 'granted' : 'denied',
+                'analytics_storage': 'granted',
+                'ad_user_data': consentGranted ? 'granted' : 'denied',
+                'ad_personalization': consentGranted ? 'granted' : 'denied'
+            });
+        }
     </script>
 
     <!-- AdSense -->
@@ -657,11 +713,13 @@
             }
 
             trackAnalytics() {
-                // Track game start
+                // Enhanced GA4 event tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'page_view', {
                         page_title: 'Focus Game',
-                        page_location: window.location.href
+                        page_location: window.location.href,
+                        content_group1: 'Brain Training',
+                        content_group2: 'Memory Game'
                     });
                 }
             }
@@ -669,21 +727,44 @@
             setupEvents() {
                 document.getElementById('startBtn').addEventListener('click', () => {
                     this.startGame();
-                    // Track game start
+                    // Enhanced game start tracking
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'game_start', {
-                            event_category: 'engagement',
-                            event_label: 'memory_game'
+                            event_category: 'game_engagement',
+                            event_label: 'focus_training_game',
+                            game_type: 'memory_sequence',
+                            difficulty_level: 'progressive',
+                            user_level: this.level
                         });
                     }
                 });
                 
-                document.getElementById('resetBtn').addEventListener('click', () => this.resetData());
+                document.getElementById('resetBtn').addEventListener('click', () => {
+                    this.resetData();
+                    // Track reset action
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'game_reset', {
+                            event_category: 'game_action',
+                            event_label: 'progress_reset',
+                            previous_score: this.score,
+                            previous_level: this.bestLevel
+                        });
+                    }
+                });
                 
                 document.querySelectorAll('.color-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         if (this.isUserTurn) {
                             this.handleClick(e.target.dataset.color);
+                            // Track button clicks
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'game_interaction', {
+                                    event_category: 'game_play',
+                                    event_label: `color_${e.target.dataset.color}`,
+                                    current_level: this.level,
+                                    sequence_position: this.userInput.length
+                                });
+                            }
                         }
                     });
                 });
@@ -701,12 +782,24 @@
                 document.getElementById('startBtn').textContent = 'Try Again';
                 document.getElementById('startBtn').disabled = false;
                 
-                // Track game over
+                // Enhanced game over tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'game_over', {
-                        event_category: 'game_progress',
+                        event_category: 'game_completion',
                         event_label: `final_level_${this.level}`,
-                        value: this.level
+                        value: this.level,
+                        final_score: this.score,
+                        highest_streak: this.streak,
+                        colors_reached: this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8,
+                        session_duration: Date.now() - this.gameStartTime,
+                        rank_achieved: this.getRank().name
+                    });
+                    
+                    // Track user retention metrics
+                    gtag('event', 'user_engagement', {
+                        event_category: 'retention',
+                        event_label: 'game_session_end',
+                        engagement_time_msec: Date.now() - this.gameStartTime
                     });
                 }
                 
@@ -720,12 +813,24 @@
                 document.getElementById('startBtn').disabled = false;
                 this.isPlaying = false;
                 
-                // Track game completion
+                // Enhanced game completion tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'game_complete', {
                         event_category: 'achievement',
                         event_label: 'all_levels_completed',
-                        value: 15
+                        value: 15,
+                        final_score: this.score,
+                        total_session_time: Date.now() - this.gameStartTime,
+                        mastery_achieved: true,
+                        completion_rate: '100%'
+                    });
+                    
+                    // Track master achievement
+                    gtag('event', 'achievement_unlocked', {
+                        event_category: 'game_achievement',
+                        event_label: 'game_master',
+                        achievement_id: 'complete_all_levels',
+                        achievement_name: 'Focus Master'
                     });
                 }
             }
@@ -904,12 +1009,43 @@
                 
                 document.getElementById('gameStatus').textContent = `Great! +${totalPoints} points`;
                 
-                // Track level completion
+                // Enhanced level completion tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'level_up', {
                         event_category: 'game_progress',
                         event_label: `level_${this.level}`,
-                        value: this.level
+                        character_name: 'focus_trainer',
+                        level_name: `Level ${this.level}`,
+                        value: this.level,
+                        score: this.score,
+                        streak: this.streak,
+                        colors_available: this.level <= 5 ? 4 : this.level <= 10 ? 6 : 8,
+                        sequence_length: this.sequence.length,
+                        points_earned: totalPoints
+                    });
+                    
+                    // Track milestone achievements
+                    if (this.level === 5) {
+                        gtag('event', 'achievement_unlocked', {
+                            event_category: 'game_achievement',
+                            event_label: 'six_colors_unlocked',
+                            achievement_id: 'color_expansion_1'
+                        });
+                    } else if (this.level === 10) {
+                        gtag('event', 'achievement_unlocked', {
+                            event_category: 'game_achievement',
+                            event_label: 'eight_colors_unlocked',
+                            achievement_id: 'color_expansion_2'
+                        });
+                    }
+                    
+                    // Track rank progression
+                    const newRank = this.getRank();
+                    gtag('event', 'rank_progression', {
+                        event_category: 'user_progression',
+                        event_label: newRank.name.toLowerCase(),
+                        rank_name: newRank.name,
+                        rank_icon: newRank.icon
                     });
                 }
                 
