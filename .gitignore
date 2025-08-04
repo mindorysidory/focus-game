@@ -26,3 +26,23 @@ node_modules/
 # Temporary files
 tmp/
 temp/
+
+# 🔐 Security - NEVER commit these files!
+config.js
+secrets.js
+.env
+.env.local
+.env.production
+.env.staging
+
+# 📊 Data files (if any)
+*.db
+*.sqlite
+data/
+backups/
+
+# 📦 Build outputs (if using build tools later)
+dist/
+build/
+*.tgz
+*.tar.gz
