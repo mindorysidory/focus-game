@@ -5,164 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Focus Game</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background: #f4f4f4; 
-        }
-        .container { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        }
+        /* 기존 스타일 유지 */
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #2c5aa0; margin-bottom: 10px; }
-        .back-link { 
-            background: #4a90e2; 
-            color: white; 
-            padding: 10px 20px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            display: inline-block; 
-            margin-bottom: 20px; 
-        }
+        .back-link { background: #4a90e2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
         .back-link:hover { background: #357abd; }
-        .form-section, .admin-section { 
-            background: #f8f9fa; 
-            padding: 20px; 
-            border-radius: 8px; 
-            margin: 20px 0; 
-        }
+        .form-section, .admin-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
         .form-group { margin-bottom: 20px; }
-        .form-group label { 
-            display: block; 
-            margin-bottom: 5px; 
-            font-weight: bold; 
-            color: #555; 
-        }
-        .form-group input, .form-group textarea, .form-group select { 
-            width: 100%; 
-            padding: 10px; 
-            border: 1px solid #ddd; 
-            border-radius: 5px; 
-            font-size: 16px; 
-        }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
         .form-group textarea { height: 120px; resize: vertical; }
-        .submit-btn { 
-            background: #4a90e2; 
-            color: white; 
-            padding: 12px 30px; 
-            border: none; 
-            border-radius: 5px; 
-            font-size: 16px; 
-            cursor: pointer; 
-            margin-right: 10px;
-        }
+        .submit-btn { background: #4a90e2; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-right: 10px; }
         .submit-btn:hover { background: #357abd; }
-        .admin-btn { 
-            background: #28a745; 
-            color: white; 
-            padding: 8px 15px; 
-            border: none; 
-            border-radius: 5px; 
-            font-size: 14px; 
-            cursor: pointer; 
-            margin-right: 10px;
-        }
+        .admin-btn { background: #28a745; color: white; padding: 8px 15px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; margin-right: 10px; }
         .admin-btn:hover { background: #218838; }
-        .delete-btn { 
-            background: #dc3545; 
-            color: white; 
-            padding: 8px 15px; 
-            border: none; 
-            border-radius: 5px; 
-            font-size: 14px; 
-            cursor: pointer; 
-        }
+        .delete-btn { background: #dc3545; color: white; padding: 8px 15px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; }
         .delete-btn:hover { background: #c82333; }
-        .success-msg { 
-            background: #d4edda; 
-            color: #155724; 
-            padding: 15px; 
-            border-radius: 5px; 
-            margin: 15px 0; 
-            border-left: 4px solid #28a745; 
-        }
-        .admin-section { 
-            display: none; 
-            border: 2px solid #28a745; 
-        }
-        .feedback-item { 
-            background: white; 
-            padding: 15px; 
-            margin: 10px 0; 
-            border-radius: 5px; 
-            border-left: 4px solid #4a90e2; 
-        }
-        .feedback-meta { 
-            font-size: 12px; 
-            color: #666; 
-            margin-bottom: 10px; 
-        }
-        .feedback-content { 
-            background: #f8f9fa; 
-            padding: 10px; 
-            border-radius: 3px; 
-            font-family: monospace; 
-        }
-        .auto-delete-info { 
-            background: #fff3cd; 
-            padding: 10px; 
-            border-radius: 5px; 
-            border-left: 4px solid #ffc107; 
-            font-size: 14px; 
-            margin: 15px 0; 
-        }
-        .stats { 
-            display: flex; 
-            gap: 20px; 
-            margin: 15px 0; 
-        }
-        .stat-item { 
-            background: white; 
-            padding: 10px 15px; 
-            border-radius: 5px; 
-            text-align: center; 
-            flex: 1; 
-        }
-        .stat-number { 
-            font-size: 24px; 
-            font-weight: bold; 
-            color: #2c5aa0; 
-        }
-        .stat-label { 
-            font-size: 12px; 
-            color: #666; 
-        }
-        .password-section { 
-            background: #e8f4fd; 
-            padding: 15px; 
-            border-radius: 5px; 
-            margin: 15px 0; 
-        }
+        .success-msg { background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #28a745; }
+        .admin-section { display: none; border: 2px solid #28a745; }
+        .feedback-item { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #4a90e2; }
+        .feedback-meta { font-size: 12px; color: #666; margin-bottom: 10px; }
+        .feedback-content { background: #f8f9fa; padding: 10px; border-radius: 3px; font-family: monospace; }
+        .auto-delete-info { background: #fff3cd; padding: 10px; border-radius: 5px; border-left: 4px solid #ffc107; font-size: 14px; margin: 15px 0; }
+        .stats { display: flex; gap: 20px; margin: 15px 0; }
+        .stat-item { background: white; padding: 10px 15px; border-radius: 5px; text-align: center; flex: 1; }
+        .stat-number { font-size: 24px; font-weight: bold; color: #2c5aa0; }
+        .stat-label { font-size: 12px; color: #666; }
+        .password-section { background: #e8f4fd; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .config-error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #dc3545; }
     </style>
 </head>
 <body>
+    <!-- config.js 파일 로드 -->
+    <script src="config.js"></script>
+    
     <div class="container">
         <a href="index.html" class="back-link">← Back to Game</a>
         
         <h1>💬 Share Your Feedback</h1>
         <p>Help us improve Focus Game! Your feedback is valuable and helps us make the game better for everyone.</p>
 
-        <div class="auto-delete-info">
-            <strong>🗑️ Privacy Notice:</strong> All feedback is automatically deleted after 24 hours to protect your privacy.
+        <!-- Config 로드 확인 -->
+        <div id="configError" class="config-error" style="display: none;">
+            <strong>⚠️ Configuration Error:</strong> The config.js file is missing or invalid. Please check the setup instructions.
         </div>
 
-        <!-- User Feedback Form -->
+        <div class="auto-delete-info">
+            <strong>🗑️ Privacy Notice:</strong> All feedback is automatically deleted after <span id="deleteHours">24</span> hours to protect your privacy.
+        </div>
+
+        <!-- 기존 폼들 유지 -->
         <div class="form-section">
             <h3>📝 Leave Your Feedback</h3>
             <form id="feedbackForm">
@@ -186,7 +79,8 @@
                 
                 <div class="form-group">
                     <label for="message">Your Feedback</label>
-                    <textarea id="message" required placeholder="Tell us what's on your mind! Be specific - it helps us understand better."></textarea>
+                    <textarea id="message" required placeholder="Tell us what's on your mind! Be specific - it helps us understand better." maxlength="1000"></textarea>
+                    <small style="color: #666; float: right;">Max <span id="maxLength">1000</span> characters</small>
                 </div>
                 
                 <div class="form-group">
@@ -206,14 +100,14 @@
             
             <div id="successMessage" class="success-msg" style="display: none;">
                 <strong>Thank you! 🎉</strong><br>
-                Your feedback has been received and will help us improve the game. It will be automatically deleted in 24 hours for privacy.
+                Your feedback has been received and will help us improve the game. It will be automatically deleted in <span id="successDeleteHours">24</span> hours for privacy.
             </div>
         </div>
 
-        <!-- Admin Section (Hidden by default) -->
+        <!-- Admin Section -->
         <div class="password-section">
             <h3>🔐 Developer Access</h3>
-            <input type="password" id="adminPassword" placeholder="Enter admin password...">
+            <input type="password" id="adminPassword" placeholder="Enter admin password..." autocomplete="off">
             <button type="button" onclick="checkAdminAccess()" class="admin-btn">Access Feedback Dashboard</button>
         </div>
 
@@ -252,24 +146,44 @@
                 <li><strong>🏆 Community-driven:</strong> Built by players, for players</li>
             </ul>
             
-            <p><em>Remember: All feedback is automatically deleted after 24 hours to protect your privacy. We don't store any personal information.</em></p>
+            <p><em>Remember: All feedback is automatically deleted after <span id="footerDeleteHours">24</span> hours to protect your privacy. We don't store any personal information.</em></p>
         </div>
     </div>
 
     <script>
-        // Admin password (change this!)
-        const ADMIN_PASSWORD = 'focusgame2025';
-        
-        // Feedback storage key
-        const FEEDBACK_KEY = 'focusGameFeedback';
+        // Configuration 로드 및 기본값 설정
+        let config = {
+            ADMIN_PASSWORD: 'focusgame2025', // 기본값 (config.js가 없을 때)
+            AUTO_DELETE_HOURS: 24,
+            MAX_FEEDBACK_LENGTH: 1000,
+            FEEDBACK_STORAGE_KEY: 'focusGameFeedback_v1'
+        };
 
-        // Initialize
+        // config.js에서 설정 로드
         document.addEventListener('DOMContentLoaded', function() {
+            if (window.FOCUS_GAME_CONFIG) {
+                config = { ...config, ...window.FOCUS_GAME_CONFIG };
+                console.log('✅ Configuration loaded successfully');
+            } else {
+                console.warn('⚠️ config.js not found, using default values');
+                document.getElementById('configError').style.display = 'block';
+            }
+            
+            // UI에 설정값 반영
+            updateConfigUI();
             cleanExpiredFeedback();
             updateStats();
         });
 
-        // Handle feedback form submission
+        function updateConfigUI() {
+            document.getElementById('deleteHours').textContent = config.AUTO_DELETE_HOURS;
+            document.getElementById('successDeleteHours').textContent = config.AUTO_DELETE_HOURS;
+            document.getElementById('footerDeleteHours').textContent = config.AUTO_DELETE_HOURS;
+            document.getElementById('maxLength').textContent = config.MAX_FEEDBACK_LENGTH;
+            document.getElementById('message').setAttribute('maxlength', config.MAX_FEEDBACK_LENGTH);
+        }
+
+        // 나머지 JavaScript 함수들은 동일하지만 config 변수 사용
         document.getElementById('feedbackForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -283,7 +197,11 @@
                 return;
             }
             
-            // Create feedback object
+            if (message.length > config.MAX_FEEDBACK_LENGTH) {
+                alert(`Message too long! Maximum ${config.MAX_FEEDBACK_LENGTH} characters allowed.`);
+                return;
+            }
+            
             const feedback = {
                 id: Date.now(),
                 nickname: nickname,
@@ -291,62 +209,55 @@
                 message: message,
                 rating: rating || null,
                 timestamp: new Date().toISOString(),
-                expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 hours from now
+                expiresAt: new Date(Date.now() + config.AUTO_DELETE_HOURS * 60 * 60 * 1000).toISOString()
             };
             
-            // Save to localStorage
             saveFeedback(feedback);
-            
-            // Show success message
             document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form
             this.reset();
             
-            // Hide success message after 5 seconds
             setTimeout(() => {
                 document.getElementById('successMessage').style.display = 'none';
             }, 5000);
             
-            // Update stats if admin section is visible
             if (document.getElementById('adminSection').style.display !== 'none') {
                 updateStats();
                 loadFeedback();
             }
-            
-            console.log('Feedback saved:', feedback);
         });
 
         function saveFeedback(feedback) {
-            let allFeedback = JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '[]');
+            let allFeedback = JSON.parse(localStorage.getItem(config.FEEDBACK_STORAGE_KEY) || '[]');
             allFeedback.push(feedback);
-            localStorage.setItem(FEEDBACK_KEY, JSON.stringify(allFeedback));
+            localStorage.setItem(config.FEEDBACK_STORAGE_KEY, JSON.stringify(allFeedback));
         }
 
         function getAllFeedback() {
-            return JSON.parse(localStorage.getItem(FEEDBACK_KEY) || '[]');
+            return JSON.parse(localStorage.getItem(config.FEEDBACK_STORAGE_KEY) || '[]');
         }
 
         function cleanExpiredFeedback() {
             const now = new Date().toISOString();
             let allFeedback = getAllFeedback();
             const validFeedback = allFeedback.filter(fb => fb.expiresAt > now);
-            localStorage.setItem(FEEDBACK_KEY, JSON.stringify(validFeedback));
+            localStorage.setItem(config.FEEDBACK_STORAGE_KEY, JSON.stringify(validFeedback));
             
             if (allFeedback.length !== validFeedback.length) {
-                console.log(`Cleaned ${allFeedback.length - validFeedback.length} expired feedback items`);
+                console.log(`🧹 Cleaned ${allFeedback.length - validFeedback.length} expired feedback items`);
             }
         }
 
         function checkAdminAccess() {
             const password = document.getElementById('adminPassword').value;
-            if (password === ADMIN_PASSWORD) {
+            if (password === config.ADMIN_PASSWORD) {
                 document.getElementById('adminSection').style.display = 'block';
                 document.getElementById('adminPassword').value = '';
                 loadFeedback();
                 updateStats();
+                console.log('🔓 Admin access granted');
             } else {
-                alert('Incorrect password!');
+                alert('❌ Incorrect password!');
+                console.warn('🔒 Failed admin access attempt');
             }
         }
 
@@ -364,16 +275,15 @@
         }
 
         function loadFeedback() {
-            cleanExpiredFeedback(); // Clean before loading
+            cleanExpiredFeedback();
             const feedback = getAllFeedback();
             const listEl = document.getElementById('feedbackList');
             
             if (feedback.length === 0) {
-                listEl.innerHTML = '<p style="text-align: center; color: #666;">No feedback yet. Encourage users to share their thoughts!</p>';
+                listEl.innerHTML = '<p style="text-align: center; color: #666; padding: 20px;">📭 No feedback yet. Encourage users to share their thoughts!</p>';
                 return;
             }
             
-            // Sort by newest first
             feedback.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
             
             listEl.innerHTML = feedback.map(fb => {
@@ -400,7 +310,7 @@
             if (confirm('Delete this feedback?')) {
                 let feedback = getAllFeedback();
                 feedback = feedback.filter(fb => fb.id !== id);
-                localStorage.setItem(FEEDBACK_KEY, JSON.stringify(feedback));
+                localStorage.setItem(config.FEEDBACK_STORAGE_KEY, JSON.stringify(feedback));
                 loadFeedback();
                 updateStats();
             }
@@ -408,17 +318,17 @@
 
         function clearAllFeedback() {
             if (confirm('Are you sure you want to delete ALL feedback? This cannot be undone!')) {
-                localStorage.removeItem(FEEDBACK_KEY);
+                localStorage.removeItem(config.FEEDBACK_STORAGE_KEY);
                 loadFeedback();
                 updateStats();
-                alert('All feedback has been cleared.');
+                alert('🧹 All feedback has been cleared.');
             }
         }
 
         function exportFeedback() {
             const feedback = getAllFeedback();
             if (feedback.length === 0) {
-                alert('No feedback to export.');
+                alert('📭 No feedback to export.');
                 return;
             }
             
@@ -436,9 +346,11 @@
             a.download = `focus_game_feedback_${new Date().toISOString().split('T')[0]}.csv`;
             a.click();
             window.URL.revokeObjectURL(url);
+            
+            console.log('📥 Feedback exported successfully');
         }
 
-        // Auto-cleanup every hour
+        // Auto-cleanup
         setInterval(cleanExpiredFeedback, 60 * 60 * 1000);
     </script>
 </body>
