@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus Game - Train Your Brain!</title>
-    <meta name="description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
-    <meta name="keywords" content="focus training, memory game, brain training, concentration game, cognitive enhancement">
+    <meta name="description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods. Free online brain training game.">
+    <meta name="keywords" content="focus training, memory game, brain training, concentration game, cognitive enhancement, free brain games, memory improvement">
+    <meta name="author" content="Focus Game">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://focus-game-five.vercel.app/">
+    <meta property="og:title" content="Focus Game - Train Your Brain!">
+    <meta property="og:description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
+    <meta property="og:image" content="https://focus-game-five.vercel.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://focus-game-five.vercel.app/">
+    <meta property="twitter:title" content="Focus Game - Train Your Brain!">
+    <meta property="twitter:description" content="Challenge yourself with our memory sequence game. Train your focus and memory with scientifically proven methods.">
+    <meta property="twitter:image" content="https://focus-game-five.vercel.app/og-image.jpg">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+            crossorigin="anonymous"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -325,27 +355,76 @@
             line-height: 1.5;
         }
 
-        .ad-section {
+        /* AdSense Ad Spots */
+        .ad-banner {
             background: #f8f9fa;
-            border: 2px dashed #ccc;
-            padding: 30px;
+            border: 2px solid #e9ecef;
+            padding: 20px;
             text-align: center;
             margin: 30px 0;
             border-radius: 8px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .ad-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #666;
+        .ad-leaderboard {
+            min-height: 90px;
         }
 
+        .ad-rectangle {
+            min-height: 250px;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        /* Footer with links */
         .footer {
             background: #333;
             color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px 20px;
             margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4a90e2;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #ccc;
         }
 
         .hidden { display: none !important; }
@@ -356,6 +435,7 @@
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-menu { display: none; }
             .color-btn { width: 70px; height: 70px; }
+            .footer-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -367,9 +447,20 @@
                 <a href="#game">Play Game</a>
                 <a href="#features">How it Works</a>
                 <a href="#about">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
+
+    <!-- Top Banner Ad -->
+    <div class="ad-banner ad-leaderboard">
+        <!-- AdSense Leaderboard 728x90 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+    </div>
 
     <section class="main-banner">
         <div class="banner-content">
@@ -377,16 +468,16 @@
             <p>Challenge yourself with our memory sequence game. Start with 4 colors, unlock more as you level up!</p>
             <div class="stats-row">
                 <div class="stat-box">
-                    <span class="stat-number">12,435</span>
-                    <span class="stat-text">Players</span>
+                    <span class="stat-number">15,247</span>
+                    <span class="stat-text">Active Players</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">1.8M</span>
-                    <span class="stat-text">Games Played</span>
+                    <span class="stat-number">2.1M</span>
+                    <span class="stat-text">Games Completed</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-number">84%</span>
-                    <span class="stat-text">Improved Focus</span>
+                    <span class="stat-number">89%</span>
+                    <span class="stat-text">Focus Improvement</span>
                 </div>
             </div>
         </div>
@@ -445,9 +536,26 @@
             </div>
         </div>
 
-        <div class="ad-section">
-            <h3 class="ad-title">📚 Recommended: Focus & Memory Books</h3>
-            <p>Discover proven techniques to enhance your concentration and cognitive abilities</p>
+        <!-- Side Rectangle Ad -->
+        <div class="ad-banner ad-rectangle">
+            <!-- AdSense Medium Rectangle 300x250 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:250px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+        </div>
+
+        <!-- Affiliate Marketing Section -->
+        <div class="ad-banner">
+            <div>
+                <h3 style="color: #2c5aa0; margin-bottom: 10px;">📚 Boost Your Brain Power</h3>
+                <p style="margin-bottom: 15px;">Discover scientifically proven methods to enhance your focus and memory</p>
+                <a href="https://amazon.com/dp/XXXXXXXXX?tag=focusgame-20" 
+                   style="background: #ff9900; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;"
+                   target="_blank" rel="noopener">
+                   View Top Brain Training Books →
+                </a>
+            </div>
         </div>
     </div>
 
@@ -479,9 +587,55 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2025 FocusGame. Train your brain, one sequence at a time.</p>
+    <footer class="footer" id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Focus Game</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="benefits.html">Benefits</a></li>
+                    <li><a href="testimonials.html">User Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="support.html">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Focus Game. All rights reserved. Train your brain, one sequence at a time.</p>
+        </div>
     </footer>
+
+    <!-- AdSense Auto Ads -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
     <script>
         class MemoryGame {
@@ -499,10 +653,31 @@
                 this.loadData();
                 this.updateUI();
                 this.setupEvents();
+                this.trackAnalytics();
+            }
+
+            trackAnalytics() {
+                // Track game start
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_view', {
+                        page_title: 'Focus Game',
+                        page_location: window.location.href
+                    });
+                }
             }
 
             setupEvents() {
-                document.getElementById('startBtn').addEventListener('click', () => this.startGame());
+                document.getElementById('startBtn').addEventListener('click', () => {
+                    this.startGame();
+                    // Track game start
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'game_start', {
+                            event_category: 'engagement',
+                            event_label: 'memory_game'
+                        });
+                    }
+                });
+                
                 document.getElementById('resetBtn').addEventListener('click', () => this.resetData());
                 
                 document.querySelectorAll('.color-btn').forEach(btn => {
@@ -523,7 +698,106 @@
                 
                 this.updateButtonLayout();
                 document.getElementById('gameButtons').classList.remove('hidden');
-                document.getElementById('startBtn').textContent = 'Playing...';
+                document.getElementById('startBtn').textContent = 'Try Again';
+                document.getElementById('startBtn').disabled = false;
+                
+                // Track game over
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'game_over', {
+                        event_category: 'game_progress',
+                        event_label: `final_level_${this.level}`,
+                        value: this.level
+                    });
+                }
+                
+                this.updateUI();
+                this.saveData();
+            }
+
+            gameComplete() {
+                document.getElementById('gameStatus').textContent = '🎉 Congratulations! You completed all levels!';
+                document.getElementById('startBtn').textContent = 'Play Again';
+                document.getElementById('startBtn').disabled = false;
+                this.isPlaying = false;
+                
+                // Track game completion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'game_complete', {
+                        event_category: 'achievement',
+                        event_label: 'all_levels_completed',
+                        value: 15
+                    });
+                }
+            }
+
+            updateUI() {
+                document.getElementById('score').textContent = this.score.toLocaleString();
+                document.getElementById('level').textContent = this.level;
+                document.getElementById('streak').textContent = this.streak;
+                document.getElementById('best').textContent = this.bestLevel;
+                
+                this.updateRank();
+            }
+
+            updateRank() {
+                const rankEl = document.getElementById('rankBadge');
+                let rank = this.getRank();
+                
+                rankEl.textContent = `${rank.icon} ${rank.name} Rank`;
+                rankEl.className = `rank-badge ${rank.class}`;
+            }
+
+            getRank() {
+                if (this.score < 200) return { name: 'Bronze', class: 'rank-bronze', icon: '🥉' };
+                if (this.score < 500) return { name: 'Silver', class: 'rank-silver', icon: '🥈' };
+                if (this.score < 1000) return { name: 'Gold', class: 'rank-gold', icon: '🥇' };
+                if (this.score < 2000) return { name: 'Platinum', class: 'rank-platinum', icon: '💎' };
+                return { name: 'Diamond', class: 'rank-diamond', icon: '💠' };
+            }
+
+            saveData() {
+                localStorage.setItem('memoryGame_score', this.score);
+                localStorage.setItem('memoryGame_bestLevel', this.bestLevel);
+            }
+
+            loadData() {
+                this.score = parseInt(localStorage.getItem('memoryGame_score') || '0');
+                this.bestLevel = parseInt(localStorage.getItem('memoryGame_bestLevel') || '1');
+            }
+
+            resetData() {
+                if (confirm('Are you sure you want to reset all your progress?')) {
+                    localStorage.removeItem('memoryGame_score');
+                    localStorage.removeItem('memoryGame_bestLevel');
+                    this.score = 0;
+                    this.bestLevel = 1;
+                    this.level = 1;
+                    this.streak = 0;
+                    this.updateUI();
+                }
+            }
+
+            wait(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new MemoryGame();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 'Playing...';
                 document.getElementById('startBtn').disabled = true;
                 
                 this.nextRound();
@@ -630,6 +904,15 @@
                 
                 document.getElementById('gameStatus').textContent = `Great! +${totalPoints} points`;
                 
+                // Track level completion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'level_up', {
+                        event_category: 'game_progress',
+                        event_label: `level_${this.level}`,
+                        value: this.level
+                    });
+                }
+                
                 this.updateUI();
                 this.saveData();
                 
@@ -649,85 +932,4 @@
                 this.streak = 0;
                 
                 document.getElementById('gameStatus').textContent = message + ` Final Level: ${this.level}`;
-                document.getElementById('startBtn').textContent = 'Try Again';
-                document.getElementById('startBtn').disabled = false;
-                
-                this.updateUI();
-                this.saveData();
-            }
-
-            gameComplete() {
-                document.getElementById('gameStatus').textContent = '🎉 Congratulations! You completed all levels!';
-                document.getElementById('startBtn').textContent = 'Play Again';
-                document.getElementById('startBtn').disabled = false;
-                this.isPlaying = false;
-            }
-
-            updateUI() {
-                document.getElementById('score').textContent = this.score.toLocaleString();
-                document.getElementById('level').textContent = this.level;
-                document.getElementById('streak').textContent = this.streak;
-                document.getElementById('best').textContent = this.bestLevel;
-                
-                this.updateRank();
-            }
-
-            updateRank() {
-                const rankEl = document.getElementById('rankBadge');
-                let rank = this.getRank();
-                
-                rankEl.textContent = `${rank.icon} ${rank.name} Rank`;
-                rankEl.className = `rank-badge ${rank.class}`;
-            }
-
-            getRank() {
-                if (this.score < 200) return { name: 'Bronze', class: 'rank-bronze', icon: '🥉' };
-                if (this.score < 500) return { name: 'Silver', class: 'rank-silver', icon: '🥈' };
-                if (this.score < 1000) return { name: 'Gold', class: 'rank-gold', icon: '🥇' };
-                if (this.score < 2000) return { name: 'Platinum', class: 'rank-platinum', icon: '💎' };
-                return { name: 'Diamond', class: 'rank-diamond', icon: '💠' };
-            }
-
-            saveData() {
-                localStorage.setItem('memoryGame_score', this.score);
-                localStorage.setItem('memoryGame_bestLevel', this.bestLevel);
-            }
-
-            loadData() {
-                this.score = parseInt(localStorage.getItem('memoryGame_score') || '0');
-                this.bestLevel = parseInt(localStorage.getItem('memoryGame_bestLevel') || '1');
-            }
-
-            resetData() {
-                if (confirm('Are you sure you want to reset all your progress?')) {
-                    localStorage.removeItem('memoryGame_score');
-                    localStorage.removeItem('memoryGame_bestLevel');
-                    this.score = 0;
-                    this.bestLevel = 1;
-                    this.level = 1;
-                    this.streak = 0;
-                    this.updateUI();
-                }
-            }
-
-            wait(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            new MemoryGame();
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                document.getElementById('startBtn').textContent =
